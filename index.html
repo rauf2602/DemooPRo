@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BronUz — Mehmonxona bron qilish (demo)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">🏨 Bron<span>Uz</span></a>
+      <nav class="nav">
+        <a href="#xonalar">Xonalar</a>
+        <a href="#bronlarim">Mening bronlarim <span class="badge" id="myCount">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Demo loyiha</p>
+      <h1>Mehmonxonani bir necha soniyada bron qiling</h1>
+      <p class="sub">Xonani tanlang, sanani belgilang va tasdiqlang. Ma’lumotlar faqat sizning brauzeringizda saqlanadi.</p>
+
+      <form class="search-bar" id="searchForm">
+        <label class="field">
+          <span>Kelish sanasi</span>
+          <input type="date" id="checkIn" required>
+        </label>
+        <label class="field">
+          <span>Ketish sanasi</span>
+          <input type="date" id="checkOut" required>
+        </label>
+        <label class="field">
+          <span>Mehmonlar soni</span>
+          <select id="guests">
+            <option value="1">1 kishi</option>
+            <option value="2" selected>2 kishi</option>
+            <option value="3">3 kishi</option>
+            <option value="4">4 kishi</option>
+            <option value="5">5 kishi</option>
+            <option value="6">6 kishi</option>
+          </select>
+        </label>
+        <button type="submit" class="btn primary">Xona qidirish</button>
+      </form>
+
+      <p class="search-note" id="searchNote"></p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section id="xonalar" class="section">
+      <div class="section-head">
+        <h2>Mavjud xonalar</h2>
+        <span class="muted" id="roomCount"></span>
+      </div>
+
+      <div class="rooms" id="rooms"></div>
+
+      <p class="empty" id="emptyMsg" hidden>
+        Bu shartlarga mos xona topilmadi. Mehmonlar sonini kamaytirib ko‘ring.
+      </p>
+    </section>
+
+    <section id="bronlarim" class="section">
+      <div class="section-head">
+        <h2>Mening bronlarim</h2>
+        <button class="btn ghost small" id="clearAll" hidden>Barchasini o‘chirish</button>
+      </div>
+
+      <div class="bookings" id="bookings"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 BronUz — o‘quv/demo maqsadida yaratilgan loyiha.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Yopish">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
